@@ -1,0 +1,46 @@
+##Project 2: Will Staples
+
+#I plan to use R to clean, restructure, and visualise my data. 
+#The study data I hope to use this code with will be continuous self-report numerical data 
+#grouped into 4 nominal categories. For data cleaning, I will ensure the data collected is all numeric. 
+#This is a precaution but is likely unnecessary as the code from project 1 does not allow non-numeric 
+#responses and does not allow responses outside the established response range (1-7). 
+#The data will be restructured so that all data from each condition (each participant undergoes 12 or 24 trials) 
+#will be in one of 4 vectors: PI, DI, BP, or BA. I will then visualise this data in a single bar graph 
+#with the nominal categories (PI, DI, BP, or BA) as the a-axis, and the continuous self-report data on the y-axis.
+
+
+
+#Importing libraries
+library(tidyverse)
+library(Hmisc)
+
+
+#Setting working directory
+setwd('~/Documents/PhD_Study/FutureData')
+
+
+#Importing data
+import.packages("here")
+dat = read.csv(here::here("PhD_Study", "FutureData.csv"))
+
+
+#Cleaning data
+is.numeric(dat) #if it is not, run the following line
+dat = as.numeric(dat)
+
+#Grouping data by condition
+PIxDI <- avg.sbj %>%
+  group_by_at(vars(Proximal,Distal, BP, BA)) %>% # group data by conditions, preparing it to be
+  #represented in the bar graph
+  
+
+#Visualizing data, using bootstrapped confidence intervals
+#jittered/translucent raw data
+  
+Figure <- ggplot(dat, aes(x=Condition, y=Index_score, color=Condition)) +
+  stat_summary(fun.y=mean,  geom="bar", fill=NA) +
+  stat_summary(fun.data=mean_se, geom="errorbar", width=.3) +
+  coord_cartesian(ylim = c(10, 12))
+
+ggsave('figures/PIDI.pdf',units='in',width=4,height=5)
