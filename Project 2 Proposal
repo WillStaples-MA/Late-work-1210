@@ -1,0 +1,50 @@
+the software that you will use.
+-	R
+
+the type of data you will work with.
+-	Numerical Likert responses 
+
+how you will clean/restructure your data, 
+-	The data from each participant will need to be separated and placed into 4 specific vectors.
+
+how you will visualize your data.
+-	Ggplot, single bar graph containing the 4 vectors.
+
+
+Project 2: Will Staples
+
+I plan to use R to clean, restructure, and visualise my data. The study data I hope to use this code with will be continuous self-report 
+numerical data grouped into 4 nominal categories. For data cleaning, I will ensure the data collected is all numeric. 
+This is a precaution but is likely unnecessary as the code from project 1 does not allow non-numeric responses and does not allow responses 
+outside the established response range (1-7). The data will be restructured so that all data from each condition 
+(each participant undergoes 12 or 24 trials) will be in one of 4 vectors: PI, DI, BP, or BA. I will then visualise this data in a single 
+bar graph with the nominal categories (PI, DI, BP, or BA) as the a-axis, and the continuous self-report data on the y-axis.
+——————————————————————————————————————-
+
+#Importing libraries
+library(tidyverse)
+library(Hmisc)
+
+
+#Setting working directory
+setwd('~/Documents/PhD_Study/FutureData')
+
+
+#Cleaning data
+is.numeric #if it is not, run the following line
+dat = as.numeric
+
+
+#Sort data
+If: data PI
+	Send to column 1
+Ifelse: data DI
+	Send to column 2
+Ifelse: data BP
+	Send to column 3
+Else: 
+send to column 4
+
+
+#Visualize data
+Ggplot: (Bar graph: x-axis(columns), y-axis(magnitude of scores))
