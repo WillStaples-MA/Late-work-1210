@@ -1,0 +1,71 @@
+# pseu-pseu-pseudo
+
+## Give us your pseudocode!
+For this problem set, your task is to write out the pseudocode for the experiment you'll be implementing for assignment #1. 
+Think about the logic of your experiment, if/how you want to counterbalance, the sequence of a trial, what measures you want to collect,
+and so on.
+Then, using pseudocode that makes sense to you, write it out in some sort of structured format 
+(e.g., detailed paragraphs, bulleted sequence of operations, indented code-like commands). 
+Just make sure it is both human readable and detailed. If you don't know all the details of your experiment, that is fine. 
+Make something up that's sensible, but the closer you are to the experiment you will implement, 
+the more helpful this assignment will be later on!
+
+## Deliverables
+Your submission should be 1 text file with:
+1. A brief paragraph describing of your experiment
+2. Pseudocode detailing the hierarchy of your experiment
+
+[Inspiration](https://en.wikipedia.org/wiki/File:Sussudioogg.ogg)
+
+ 
+ ## 
+
+The following is a skeleton for a project that is still in development.
+The project involves presenting the subject with a scenario played in video format.
+The subjects will make 2, temporally distinct decisions.
+The first decision will be followed by a videoclip relevant to the decision that they make.
+They will be prompted to make a second decision. Another videoclip will play dependent on their decision.
+The experiment is terminated with the playing of a final videoclip that is identical regardless of any choices they have made.
+
+ 
+Import Libraries
+pp#()
+
+Present neutral screen with prompt to begin experiment 
+Register any keystroke =  Play clip 1
+
+Record responses following clip 1
+	If keystroke = G 
+		Play clip 2a
+	Else
+		Keystroke = H
+		Play clip 2b
+Record response and append to list pp#()
+
+Record responses following clip 2
+If clip = clip 2a
+	If keystroke = G 
+		Play clip 3a
+	Else
+		Play clip 3b
+Record response and append to list pp#()
+
+Else
+	If keystroke = G 
+		Play clip 3x
+	Else
+		Keystroke = H
+		Play clip 3y
+	Record response and append to list pp#()
+
+Clip 3 ends = play clip 4
+Clip 4 ends = Present response index
+
+
+
+
+
+
+
+event.clearEvents() #flushes keystroke evenrs so you can collect new ones
+keys = []
