@@ -44,18 +44,8 @@ tbl_clean <- drop_na(tbl_clean, D_biep.White_Good_all)
 # att : att_7 (race attitude 1 "strongly prefer AA" 7 "strongly prefer white")
 # temp_b : tblacks_0to10 (temperature feelings black 1 "extremely cold" 10 "extremly warm")
 # temp_w : twhites_0to10 (temperature feelings black 1 "extremely cold" 10 "extremly warm")
-tbl_clean <- rename(tbl_clean,
-                    id = session_id, 
-                    gender = gender,
-                    race=raceomb_002,
-                    bias=D_biep.White_Good_all,
-                    rt=Mn_RT_all_3467,
-                    edu=edu_14,
-                    pol=politicalid_7,
-                    state=STATE,
-                    att=att_7,
-                    temp_b=tblacks_0to10,
-                    temp_w=twhites_0to10)
+tbl_clean <- rename(tbl_clean, id = session_id, gender = gender, race=raceomb_002, bias=D_biep.White_Good_all, rt=Mn_RT_all_3467, edu=edu_14, pol=politicalid_7,
+                    state=STATE, att=att_7, temp_b=tblacks_0to10, temp_w=twhites_0to10)
 
 #  missing values  ---------------------------------------------  
 
